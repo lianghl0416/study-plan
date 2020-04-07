@@ -1,0 +1,27 @@
+1. 看到学习了forEach，出一个实际例子遇到的题
+有一个数组是这样的结构
+[
+  {firstName: 'yang', lastName: 'shuaishuai'},
+  {firstName: 'liang', lastName: 'chouchou'}
+]
+我想要得到一个全线的数组，里面每一项是firName和lastName的拼接
+即 
+[
+{fullName: 'yang-shuaishuai'},
+{fullName: 'liang-chouchou'},
+]
+
+
+2. 看到室友学了排序，现在我有一个数组，
+[
+  {
+    name: 'yang',
+    age: '18',
+  },
+  {
+    name: 'liang',
+    age: '30',
+  }
+]
+
+请将这个数组进行年龄从大到小排序
