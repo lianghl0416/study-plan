@@ -8,19 +8,30 @@ var a1 = [
         lastName: 'chouchou'
     }
 ]
-
-var result1 = [];
-var result2 = []
-
+// 
+// var result1 = [];
+// var result2 = []
+// 
 // 1. 第一种for写法
-for (var i = 0; i < a1.length; i++) {
-    result1.push({ fullName: a1[i].firstName + '-' + a1[i].lastName })
-}
-
+// for (var i = 0; i < a1.length; i++) {
+// result1.push({ fullName: a1[i].firstName + '-' + a1[i].lastName })
+// }
+// 
 // 2. 第二种forEach写法
-a1.forEach(function (item) {
-    result2.push({ fullName: item.firstName + '-' + item.lastName })
-})
+// a1.forEach(function (item) {
+// result2.push({ fullName: item.firstName + '-' + item.lastName })
+// })
+// 
+// console.log(result1)
+// console.log(result2)
 
-console.log(result1)
-console.log(result2)
+
+// var x = [
+    // { name: 'yang', age: '18' },
+    // { name: 'liang', age: '30' }
+// ]
+// var byAge = function (a, b) {
+    // return a.age - b.age;
+// };
+// x.reverse();
+// console.log(x)
