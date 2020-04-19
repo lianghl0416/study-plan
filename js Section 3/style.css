@@ -1,6 +1,7 @@
 #canvas{
     background: grey;
     height:100vh;
+    position: relative;
     }
 body{
     margin:0;
