@@ -1,5 +1,11 @@
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+ 
 #xxx{
-background: green;
 margin:0;
 }
 body{
@@ -7,19 +13,22 @@ body{
 }
 .actions{
     position: fixed;
-    bottom:0;
+    top:0;
     left:0;
 }
-.actions > #brush{
-    display:none;
+.actions svg{
+    width: 1.5em;
+    height: 1.5em;
 }
 
-.actions.x > #brush{
-    display:inline-block;
-}
-.actions.x > #eraser{
-    display:none;
-}
+
+
+
+
+
+
+
+
 
 
 

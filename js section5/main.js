@@ -17,14 +17,7 @@ autoSetCanvasSize(yyy)
 listenToUser(yyy)
 //控制橡皮檫是否开启：
 var eraserEnabled = false
-eraser.onclick = function () {
-    eraserEnabled = true
-    actions.className = 'actions x'
-}
-brush.onclick = function () {
-    eraserEnabled = false
-    actions.className = 'actions'
-}
+
 //控制画板宽高属性
 function autoSetCanvasSize(canvas) {
     setCanvasSize()
