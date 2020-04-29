@@ -58,54 +58,102 @@
     } else {
         console.log('hello laoliang');
     }//输出'hello laoliang'，因为a.c赋值给f，用f（）调用a.c里的函数时，this指向window,结果为undefin
-    
+
 
     任意类型转字符串：
 
     1.String(x):
 
-     String(1) >>>"1"
-     String(true)>>>"true"
-     String(null)>>"null"
-     String(indefined)>>>"undefined"
-     String({})>>>"[object Object]"
+    String(1) >>> "1"
+    String(true) >>> "true"
+    String(null) >> "null"
+    String(indefined) >>> "undefined"
+    String({}) >>> "[object Object]"
 
     2. x.toString():
-      (1)toString()>>>"1"
-      true.toString()>>>"true"
-      ({}).toString()>>>"[object Object]"
+    (1)toString() >>> "1"
+    true.toString() >>> "true"
+        ({}).toString() >>> "[object Object]"
 
-    3. x +'' :
-      1 + ''>>>"1" 
-      true +''>>>"true"
-      {} +''>>>0
-      var 0 = {}
-      0 + ''
-      "[object Object]"
-    
+    3. x + '' :
+    1 + '' >>> "1"
+    true + '' >>> "true"
+    { } +'' >>> 0
+    var 0 = {}
+    0 + ''
+    "[object Object]"
+
 
     任意类型转数字：
 
-    1.Number(x):  Number('5')>>> 5
-    2.parseInt(x, 10)  parseInt('1',10)===1
-    3.parseFloat('1.23')====1.23
-    4.'1' -0 ====1
-    5.+'1.23'===1.23  +'-1'===-1    -'-1'===1
+    1.Number(x): Number('5') >>> 5
+    2.parseInt(x, 10)  parseInt('1', 10) === 1
+    3.parseFloat('1.23') ====1.23
+    4.'1' - 0 ====1
+    5. + '1.23' === 1.23 + '-1' === -1 - '-1' === 1
 
 
     任意类型转布尔：
-    
+
     1.Boolean(x)
-    2. !!x
+    2.!!x
 
 
+    内存图：
+
+    JS 引擎将内存分为代码区和数据区，数据区分为 Stack（栈内存）和 Heap（堆内存），简单类型的数据（number bolean string null undefined symbol）直接存在 Stack 里，
+    复杂类型的数据(object)是把 Heap 地址存在 Stack 里遇到问题就画图，不要分析。
+
+    面试题：
+
+    var a = 1
+    var b = a
+    b = 2
+    请问 a 显示是几？》》》》1
+        ```
+
+        ```javascript
+    var a = { name: 'a' }
+    var b = a
+    b = { name: 'b' }
+    请问现在 a.name 是多少？>>>>> 'a'
+        ```
+
+        ```javascript
+    var a = { name: 'a' }
+    var b = a
+    b.name = 'b'
+    请问现在 a.name 是多少？>>>>>> 'b'
+        ```
+
+        ```javascript
+    var a = { name: 'a' }
+    var b = a
+    b = null
+    请问现在 a 是什么？>>>>>> { name: 'a' }
 
 
+    深拷贝和浅拷贝：
+
+    var a = 1
+    var b = a
+    b = 2 //这个时候改变 b
+    a 完全不受 b 的影响那么我们就说这是一个深复制。对于简单类型（除了object以外）的数据来说，赋值就是深拷贝。
 
 
+    对于复杂类型的数据（对象）来说，才要区分浅拷贝和深拷贝：
+
+    var a = { name: 'frank' }
+    var b = a
+    b.name = 'b'
+    a.name === 'b' // true，这是一个浅拷贝的例子，因为我们对 b 操作后，a 也变了。
 
 
-
+    深拷贝就是对 Heap 内存进行完全的拷贝：
+    var a = { name: 'frank' }
+    var b = deepClone(a) // deepClone 还不知道怎么实现
+    b.name = 'b'
+    a.name === 'frank' // true
 
 
 
