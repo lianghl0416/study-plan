@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    //5个falsy值： 0 NaN  '' null  undefined
+    function x(a) {
+        if (a) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    if (x(1)) {
+        console.log('hello world');
+    } else {
+        console.log('hello laoliang');
+    }//打印'hello laoliang'，因为x(1)返回false,打印else里得内容。
+
+
+    function x(a) {
+        if (a) {
+            a = a + 1;
+        } else {
+            a = a - 1;
+        }
+    }
+
+    if (x(1)) {
+        console.log('hello laoliang');
+    } else {
+        console.log('hello world');
+    }//打印'hello world'，因为函数没写return，返回值为undefined,输出else里的内容。
+
+
+
+    var a = {
+        b: 1,
+        c: function () {
+            return this.b;
+        },
+    };
+
+    var f = a.c;
+    if (f()) {
+        console.log('hello world');
+    } else {
+        console.log('hello laoliang');
+    }//输出'hello laoliang'，因为a.c赋值给f，用f（）调用a.c里的函数时，this指向window,结果为undefined.
+
+
+
+    
+
+
+
+
+
+
+</script>
+
+</html>
