@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="./style.css">
     <script src="./main.js"></script>
 
-    
+
     <title>DOM</title>
 </head>
+
 <body>
-         <!-- DOM:  一个标签通过node构造函数就可以变成一个对象 -->
+    <!-- DOM:  一个标签通过node构造函数就可以变成一个对象 -->
 
 
     <!-- <div>   -->
-        xxx 注释
+    xxx 注释
     <!-- </div> -->
 
 
@@ -25,24 +27,40 @@
     <!-- document.body.previousElementSibling //  <head>...</head> -->
     <!-- body的所有元素的nodeName都是大写的元素名，如document.body.nodeName: "BODY",除去svg标签，为小写“ -->
     <!-- xxx.nodeType: 1 : element元素节点  例如<p><div>  3 :  text 文字  -->
-        
-    <div id = "div1">
+        nextSibling  是可能获取到文本的；
+        innerText与textContent室友区别的，前者更加智能，后者会获取到<style>里的css文本。
+
+    <div id="div1">
         <div>
             1
         </div>
     </div>
 
-    
 
-    
-    
-    
-    
+    2.方法（如果一个属性是函数，那么这个属性就也叫做方法；换言之，方法是函数属性）
 
-    
+    appendChild() //增加儿子
+    cloneNode() //如果括号里为true则为深度复制，如果为false则为浅拷贝
+    contains() //node.contains( otherNode )  node 是否包含otherNode节点；otherNode 是否是node的后代节点.如果 otherNode 是 node 的后代节点或是 node 节点本身.则返回true , 否则返回 false.
+    hasChildNodes()
+    insertBefore()//在前面插入
+    isEqualNode()//是否是相等的节点
+    isSameNode()//是否是相同的节点
+    removeChild() // 删除儿子，从页面中移除，内存中还在
+    replaceChild() // 交换，替换
+    normalize() // 常规化
+
+    DOM APi无外乎是节点的《增删改查》
+
+
+
+
+
+
 
 
 
 
 </body>
+
 </html>
