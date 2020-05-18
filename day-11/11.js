@@ -2,7 +2,7 @@ function getSibling(node) {
     var allChildren = item3.parentNode.children
     var array = { length: 0 }
     for (let i = 0; i < allChildren.length; i++) {
-        if (allChildren[i] !== item3) {
+        if (allChildren[i] !== node) {
             array[array.length] = allChildren[i]
             array.length += 1
         }
@@ -13,11 +13,15 @@ function getSibling(node) {
 function addclass(node, classes) {
 
     for (let key in classes) {
-        // var value = classes[key]
-        if (classes[key]) {
-            node.classList.add(key)
-        } else {
-            node.classList.remove(key)
-        }
+        var value = classes[key]
+        var methodName = value ? 'add' : 'remove'
+        node.classList[methodName](key)
     }
 }
+
+window.lhldom = {}
+lhldom.getSibling = getSibling
+lhldom.addclass = addclass
+
+lhldom.getSibling(item5)
+
