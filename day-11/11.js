@@ -9,3 +9,15 @@ function getSibling(node) {
     }
     return array
 }
+
+function addclass(node, classes) {
+
+    for (let key in classes) {
+        // var value = classes[key]
+        if (classes[key]) {
+            node.classList.add(key)
+        } else {
+            node.classList.remove(key)
+        }
+    }
+}
