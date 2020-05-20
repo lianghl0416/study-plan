@@ -1,0 +1,8 @@
+.images{
+    display: flex;
+    align-items: flex-start;
+}
+.window{
+    width:300px;
+    overflow: hidden;
+}
