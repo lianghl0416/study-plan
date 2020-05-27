@@ -22,11 +22,11 @@
     z-index: 1;
 }
 .images >img.leave{
-    transform: translateX(-100%);
+    transform: translateX(100%);
     z-index: 1;
 }
 .images >img.enter{
-    transform: translateX(100%);
+    transform: translateX(-100%);
 }
 .images >img.stay{
     transform: translateX(100%);
