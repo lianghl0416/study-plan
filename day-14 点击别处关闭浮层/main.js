@@ -1,32 +1,34 @@
 
 
 // clickMe.addEventListener('click', function () {
-    // popover.style.display = 'block'
+// popover.style.display = 'block'
 // })
 // wrapper.addEventListener('click', function (e) {
-    // e.stopPropagation()
+// e.stopPropagation()
 // })
 // document.addEventListener('click', function () {
-    // popover.style.display = 'none'
+// popover.style.display = 'none'
 // })
 
 //用jquery的方法来写：
 
 // $(clickMe).on('click', function () {
-    // $(popover).show()
-    // $(document).one('click', function (){
-        // $(popover).hide()
-    // })
+// $(popover).show()
+// $(document).one('click', function (){
+// $(popover).hide()
+// })
 // })
 // $(wrapper).on('click', function (e){
-    // e.stopPropagation()
+// e.stopPropagation()
 // })
 // 
 
 //jqurey方法优化
 $(clickMe).on('click', function () {
     $(popover).show()
-    $(document).one('click', function (){
-        $(popover).hide()
-    })
+    setTimeout(function () {
+        $(document).one('click', function () {
+            $(popover).hide()
+        })
+    },0)
 })
