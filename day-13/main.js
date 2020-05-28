@@ -60,8 +60,6 @@ setInterval(() => {
 
 
 
-
-
 function getImage(n){
     return $(`.images > img:nth-child(${x(n)})`)
 }
