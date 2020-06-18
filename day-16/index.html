@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- 正则表达式 -->
+1.概述
+<!-- 新建正则表达式有两种方法。一种是使用字面量，以斜杠表示开始和结束。
+var regex = /xyz/;
+
+另一种是使用RegExp构造函数。
+var regex = new RegExp('xyz'); -->
+
+<!-- RegExp构造函数还可以接受第二个参数，表示修饰符
+var regex = new RegExp('xyz', 'i');
+// 等价于
+var regex = /xyz/i; -->
+
+<!-- 2.正则对象的实例属性分成两类。
+
+一类是修饰符相关，用于了解设置了什么修饰符。
+
+RegExp.prototype.ignoreCase：返回一个布尔值，表示是否设置了i修饰符。
+RegExp.prototype.global：返回一个布尔值，表示是否设置了g修饰符。
+RegExp.prototype.multiline：返回一个布尔值，表示是否设置了m修饰符。
+RegExp.prototype.flags：返回一个字符串，包含了已经设置的所有修饰符，按字母排序。
+上面四个属性都是只读的。
+
+var r = /abc/igm;
+
+r.ignoreCase // true
+r.global // true
+r.multiline // true
+r.flags // 'gim' -->
+
+<!-- 另一类是与修饰符无关的属性，主要是下面两个。
+
+RegExp.prototype.lastIndex：返回一个整数，表示下一次开始搜索的位置。该属性可读写，但是只在进行连续搜索时有意义，详细介绍请看后文。
+RegExp.prototype.source：返回正则表达式的字符串形式（不包括反斜杠），该属性只读。
+var r = /abc/igm;
+
+r.lastIndex // 0
+r.source // "abc" -->
+
+实例方法：
+1.
+RegExp.prototype.test()
+<!-- /cat/.test('cats and dogs') // true  -->
+2.
+RegExp.prototype.exec()
+<!-- 正则实例对象的exec()方法，用来返回匹配结果。如果发现匹配，就返回一个数组，成员是匹配成功的子字符串，否则返回null。
+
+var s = '_x_x';
+var r1 = /x/;
+var r2 = /y/;
+
+r1.exec(s) // ["x"]
+r2.exec(s) // null  -->
+
+ String.prototype.match()
+<!-- 字符串实例对象的match方法对字符串进行正则匹配，返回匹配结果。
+
+var s = '_x_x';
+var r1 = /x/;
+var r2 = /y/;
+
+s.match(r1) // ["x"]
+s.match(r2) // null --> 
+
+String.prototype.search()
+
+<!-- 字符串对象的search方法，返回第一个满足条件的匹配结果在整个字符串中的位置。如果没有任何匹配，则返回-1。
+
+'_x_x'.search(/x/)
+// 1 -->
+
+<!-- String.prototype.replace
+字符串对象的replace方法可以替换匹配的值。它接受两个参数，第一个是正则表达式，表示搜索模式，第二个是替换的内容。
+
+str.replace(search, replacement)
+正则表达式如果不加g修饰符，就替换第一个匹配成功的值，否则替换所有匹配成功的值。
+
+'aaa'.replace('a', 'b') // "baa"
+'aaa'.replace(/a/, 'b') // "baa"
+'aaa'.replace(/a/g, 'b') // "bbb" -->
+
+
+
+</body>
+</html>
